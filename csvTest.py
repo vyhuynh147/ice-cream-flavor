@@ -42,6 +42,7 @@ class Flavors:
     def __str__(self):
         return f"{self.flavor_name} - {self.category}:  {self.calories},{self.fat_g},{self.cholesterol_mg},{self.carbs_g},{self.sugars_g},{self.protein_g}. {self.size_cup}"
 
+flavorsList = {}
 
 with open("BenJerryNutrition.csv", mode="r") as ice_db:
     flavors_DB = csv.reader(ice_db)
@@ -57,5 +58,6 @@ with open("BenJerryNutrition.csv", mode="r") as ice_db:
         category = str(flavor[7])
         size_cup = float(flavor[8])
 
-        flavor = Flavors(name, category, cal, fat_g, chol_mg, carb_g, sug_g, prot_g, size_cup )
-        print(flavor.carbs_g_funct())
+        flavorsList[name] = Flavors(name, category, cal, fat_g, chol_mg, carb_g, sug_g, prot_g, size_cup )
+        
+    print(flavorsList)
