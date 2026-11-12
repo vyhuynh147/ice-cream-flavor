@@ -2,6 +2,7 @@ from turtle import *
 from collections import deque
 import os
 
+
 flavors = {
         "chocolate": "#663B2A",
         "vanilla": "#d2a679",
@@ -136,3 +137,4 @@ def ice_cream_order():
     done()
 
 ice_cream_order()
+
